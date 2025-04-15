@@ -1,0 +1,46 @@
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #07010D;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    color: white;
+  }
+  
+  .loader {
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .loading-logo {
+    width: 100px;
+    animation: spin 4s linear infinite;
+  }
+  
+  .loading-text {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

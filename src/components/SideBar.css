@@ -1,0 +1,141 @@
+/* Sidebar Hidden (Default - Positioned Off-Screen) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hide it off-screen */
+    width: 220px;
+    height: 100vh;
+    background: linear-gradient(to right, transparent 0%, #07010D 100%);
+
+    color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 20px;
+}
+
+/* Sidebar Open (Slide-in Effect) */
+.sidebar.open {
+    right: 0px; /* Bring it into view */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid white;
+}
+
+/* Logo */
+.logo {
+    width: 30px;
+    height: auto;
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigation Links */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    transition: background 0.2s;
+}
+.solidBar {
+    background-color: white;
+    height:1px;
+    margin-top: 70px;
+   
+
+}
+
+
+.sidebar-nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Toggle Button */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Position button on the right */
+    background-color: transparent;
+    color: white;
+    width: 50px;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-btn:hover {
+    color:#ED1BAD;
+}
+
+/* Icon Rotation */
+.icon-rotate {
+    transition: transform 0.3s ease;
+}
+
+/* Rotate when sidebar is open */
+.icon-rotate.open {
+    transform: rotate(90deg);
+}
+/* Sidebar base styles (you already have this) */
+.sidebar {
+    /* ... your existing styles ... */
+    overflow: hidden; /* Ensure links don’t spill outside */
+  }
+  
+  /* Animate links one-by-one */
+  .sidebar-nav a {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 0.4s ease forwards;
+  }
+  
+  /* Keyframes for slide in */
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  /* Faster stagger animation delays */
+.sidebar.open .sidebar-nav a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .sidebar.open .sidebar-nav a:nth-child(2) {
+    animation-delay: 0.25s;
+  }
+  .sidebar.open .sidebar-nav a:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .sidebar.open .sidebar-nav a:nth-child(4) {
+    animation-delay: 0.55s;
+  }
+  
+  .sidebar:not(.open) .sidebar-nav a {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: none;
+  }
+    

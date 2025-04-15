@@ -1,11 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #190f25, #54315c);
-    background-size: cover;
+    background: #07010D;
+    /* background-size: cover;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -135,9 +135,9 @@ body {
   
   .site-logo {
     position: fixed;
-    top: -33px;
-    left: 10px;
-    width: 150px;
+    top: -60px;
+    left: 5px;
+    width: 220px;
     height: auto;
     z-index: 1000;
   }
