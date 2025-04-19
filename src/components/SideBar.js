@@ -24,7 +24,7 @@ export default function SideBar() {
         <nav className="sidebar-nav">
         <Link to="/profil" onClick={toggleSidebar}>Profil</Link>
           <Link to="/settings" onClick={toggleSidebar}>Settings</Link>
-          <Link to="/Favoris" onClick={toggleSidebar}>Favoris</Link>
+          <Link to="/FavoriteAnime" onClick={toggleSidebar}>Favoris</Link> {/* This ensures redirection to FavoriteAnime page */}
           <Link to="/Logout" onClick={toggleSidebar}>Logout</Link>
         </nav>
       </div>

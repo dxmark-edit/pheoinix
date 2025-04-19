@@ -1,0 +1,518 @@
+
+body {
+  background-color: #07010D;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+
+ 
+  
+
+}
+.anime-details-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.anime-details {
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+margin: 20px;
+
+  color: white;
+  
+ 
+  position: relative;
+  
+  overflow: hidden;
+  transform: scale(0.9);
+
+
+}
+
+.select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+
+
+.anime-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  right:30px
+ 
+}
+
+.anime-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.anime-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  right: 30px;
+  
+}
+
+.anime-image img {
+  width: auto;
+  height: 350px;
+  max-width: 400px;
+  
+  box-shadow: 0px 4px 10px rgb(4, 4, 4);
+  z-index: 5;
+}
+.anime-info {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ opacity: 1;
+  z-index: 3;
+  position: relative;
+  bottom:50px;
+ 
+  right: 30px;
+  
+  
+  
+}
+.anime-info .box1 ,.Box2 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: transparent;
+
+
+}
+.Box2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  position: relative;
+  bottom: 50px;
+}
+
+
+.anime-info h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: white;
+  font-family: inter;
+  
+  text-transform: capitalize;
+  
+}
+
+.anime-info p {
+  font-size: 12px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-align: justify;
+  overflow: hidden;
+}
+
+.anime-info strong {
+  color:white;
+}
+
+.anime-score {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  float: right;
+  flex-direction: column;
+  position: relative;
+  bottom:  180px;
+}
+
+.anime-score span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stars {
+  display: flex;
+  width: 80px;
+}
+
+.stars svg {
+  margin-right: 3px;
+  fill: #ccc;
+  
+}
+
+.stars svg.active {
+  fill: #ED1BAD;
+}
+
+/* Nouveau conteneur pour le select et les épisodes */
+.seasons-episodes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left; 
+  width: 100%;
+  padding:20px;
+  
+}
+
+/* Conteneur des épisodes */
+.episodes-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  width: 100%;
+  scroll-behavior: smooth;
+  height: 120px;
+  
+}
+
+.episodes-container::-webkit-scrollbar {
+  display: none;
+}
+
+.episode {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  
+  cursor: pointer;
+  
+  width: 134.62px;
+height: 87.5px;
+
+
+  
+
+
+}
+
+.episode-image {
+  width: 134.62px;
+  height: 87.5px;
+  
+  
+
+  object-fit: cover;
+
+  
+}
+.episode-image-shadow {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 134.62px; 
+  height: 87.5px; 
+  background-color: black; 
+  opacity: 0.1; 
+  object-fit: cover; 
+  z-index: 10;
+ 
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  
+  z-index: 4;
+ 
+}
+
+.play-icon-shadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35px;
+  height:35px;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: 3;
+  margin-left:-1px;
+
+}
+
+.blur-solid {
+  position: relative;
+  top: -15px;
+   left: 0;
+   width: 100%;
+   height: 40px;
+   z-index: 0;
+ 
+   background-color: #07010D;
+   box-shadow: 0 0 90px 80px #07010D;
+   pointer-events: none;
+ }
+ 
+
+
+
+
+
+#seasons{
+  padding-left: 15px;
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  border: #ED1BAD  1.4px solid;
+  background: transparent;
+  color: white;
+  z-index: 4;
+  cursor: pointer;
+}
+.anime-seasons option {
+  background: #07010D;
+}
+.anime-seasons {
+  -webkit-appearance: none; 
+  -moz-appearance: none;   
+  appearance: none;        
+  background-image: none;  
+}
+.bg-gradiant{
+  width: 676px; 
+  z-index: 3;
+  
+}
+
+.dropdown-icon {
+  transform: scaleX(1.4);
+  height: 15px;
+position: relative;
+right: 30px;
+top: 3px;
+line-height: 50%;
+  color: #ED1BAD;
+  opacity: 0.8;
+  cursor: pointer;
+  
+}
+.episode-number{
+  z-index:1000;
+  position: absolute;
+  top: 110%;
+  left: 0%;
+  color: white;
+  
+
+}
+
+.Simillar-anime {
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Ensures that the container is arranged in a column */
+  width: 100%;
+}
+
+.similar-anime-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding-bottom: 20px;
+  width: 100%;
+  max-width: 1000px;
+  justify-items: center; /* This ensures the grid items are centered */
+  margin: 0 auto; /* Centers the grid container horizontally */
+}
+
+.similar-anime-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 172.2px;
+  max-width: 255px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.similar-anime-card img {
+  width: 172.2px;
+  height: 255px;
+  
+  object-fit: cover;
+}
+
+.similar-anime-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+
+
+.video-placeholder {
+  width: 100%;
+  height: 500px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Style de l'icône Play */
+.play-button {
+  color: white; /* Couleur initiale de l'icône */
+  transition: color 0.3s ease; /* Effet de transition pour la couleur */
+}
+
+/* Effet hover sur l'icône Play */
+.play-button:hover {
+  color: #ED1BAD; /* Couleur rose au survol */
+}
+
+
+.video-placeholder:hover .play-button {
+  transform: scale(1.2);
+}
+
+
+/* Style pour la section de commentaires */
+/* Style pour la section de commentaires */
+.comments-section {
+  background-color: transparent;
+  padding: 20px;
+  margin-top: 20px;
+  width: 60%;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.comments-section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.comment-input-container {
+  position: relative;
+}
+
+.comment-input {
+  border: 2px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  resize: none;
+  height: 150px;
+  outline: none;
+  
+}
+
+
+
+
+.add-comment-button {
+  background-color: #ED1BAD;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  bottom: 14px;
+}
+
+.add-comment-button:hover {
+  background-color: #ED1BAD;
+}
+
+.add-comment-button:focus {
+  outline: none;
+}
+
+.comment-input::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.comments-container {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.comment {
+  background-color:white;
+  padding: 15px;
+  margin-bottom: 10px;
+  width: 60%;
+  border-radius: 5px;
+}
+
+.comment p {
+  margin: 0;
+  color: black;
+}
+
+.comments-container::-webkit-scrollbar {
+  width: 0px; /* Masquer la barre de défilement */
+  height: 0px; /* Masquer la barre de défilement horizontal */
+}
+
+.comments-container::-webkit-scrollbar-thumb {
+  background: transparent; /* Ne rien afficher pour le pouce du scrollbar */
+}
+
+#quality-select{
+  position: relative;
+  top: -65px;
+  right: -940px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+

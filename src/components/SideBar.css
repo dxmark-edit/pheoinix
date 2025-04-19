@@ -99,6 +99,9 @@
 .icon-rotate.open {
     transform: rotate(90deg);
 }
+
+
+
 /* Sidebar base styles (you already have this) */
 .sidebar {
     /* ... your existing styles ... */
@@ -138,4 +141,5 @@
     transform: translateX(50px);
     animation: none;
   }
+  
     

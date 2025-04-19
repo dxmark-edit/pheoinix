@@ -7,10 +7,14 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Settings from "./settings";
-import Favoris from "./Favoris";
+
 import Profil from "./Profil";
 import Loading from "./Loading"; // make sure this path is correct
 import SearchAnime from "./SearchAnime";
+import AnimeDetails from "./AnimeDetails";
+import FavoriteAnime from "./FavoriteAnime";
+import WatchEpisode from "./WatchEpisode";
+
 
 
 function App() {
@@ -38,11 +42,15 @@ function App() {
           
           <Route index element={<Home />} />
           <Route path="profil" element={<Profil />} />
-          <Route path="favoris" element={<Favoris />} />
+          
           <Route path="settings" element={<Settings />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="searchanime" element={<SearchAnime />} />
+          <Route path="anime/:id" element={<AnimeDetails />} />
+          <Route path="/watch/:id/episode/:episodeId" element={<WatchEpisode />} />
+
+          <Route path="FavoriteAnime" element={<FavoriteAnime />} />
         </Route>
       </Routes>
     </Router>

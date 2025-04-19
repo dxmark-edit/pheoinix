@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaSearch, FaFilter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { aniListAPI } from "../constants/api"; // Import shared API URL
 import "./SearchAnime.css";
 
 function SearchAnime() {
@@ -12,8 +13,6 @@ function SearchAnime() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0); // To track the total number of results
   const navigate = useNavigate();
-
-  const aniListAPI = "https://graphql.anilist.co"; // AniList GraphQL API URL
 
   // Fetch anime from AniList using GraphQL
   const fetchAnimes = async (page = 1) => {
@@ -231,6 +230,7 @@ function SearchAnime() {
   
 
 
+
   
   const totalPages = Math.ceil(totalResults / 48); // Calculate total pages
   
@@ -255,10 +255,6 @@ function SearchAnime() {
 
     return pages;
   };
-
-
-
-
 
 
 
@@ -321,7 +317,7 @@ function SearchAnime() {
                     <div
                       key={anime.id}
                       className="anime-item"
-                      onClick={() => navigate(`/anime/${anime.id}`)}
+                      onClick={() => navigate(`/anime/${anime.id}`)} // Redirect to AnimeDetails
                     >
                       <img src={anime.coverImage.large} alt={anime.title.romaji} />
                       <h3>{anime.title.romaji}</h3>
